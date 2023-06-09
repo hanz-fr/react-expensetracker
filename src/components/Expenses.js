@@ -17,7 +17,7 @@ function Expenses(props) {
       </div>
       <div className="my-3"></div> {/* Small Spacer */}
       {/* Expenses, inside a Container */}
-      <div className="h-96 overflow-y-scroll scrollbar-track-rounded-md scrollbar-thumb-rounded-md scrollbar-thin scrollbar-thumb-[#9F9F9F] scrollbar-track-[#3E3E3E]">
+      <div className="h-96 overflow-y-scroll scrollbar-track-rounded-md scrollbar-thumb-rounded-md scrollbar-thin scrollbar-thumb-[#6C6C6C] scrollbar-track-[#3E3E3E]">
       <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}
