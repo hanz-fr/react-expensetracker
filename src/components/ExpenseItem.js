@@ -15,7 +15,7 @@ function ExpenseItem(props) {
           <ExpenseDate date={props.date} />
           {/* Title */}
           <div className="my-auto">
-            <p className="w-48 text-white text-base font-light">{title}</p>
+            <p className="w-48 text-white text-sm font-light">{title}</p>
           </div>
         </div>
         <div className="mx-20"></div>

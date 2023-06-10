@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@font-face {
+  font-family: "Equinox";
+  font-weight: bold;
+  src: url("../public/fonts/Equinox/Equinox\ Bold.otf");
+}
+
+@font-face {
+  font-family: "Equinox";
+  font-weight: normal;
+  src: url("../public/fonts/Equinox/Equinox\ Regular.otf");
+}
