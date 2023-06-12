@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 body {
-  background-color: #1F2324;
+  background-color: #1f2324;
   margin: 0;
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
 
 @font-face {
   font-family: "Equinox";
@@ -24,4 +28,22 @@ code {
   font-family: "Equinox";
   font-weight: normal;
   src: url("../public/fonts/Equinox/Equinox\ Regular.otf");
+}
+
+@layer components {
+  .form-input {
+    @apply bg-[#D9D9D9] rounded-md px-3 py-2 text-sm text-[#848484] md:text-lg w-full focus:border-[#959595] border-2 transition-colors duration-200;
+  }
+
+  .date-input {
+    @apply w-full rounded-md bg-[#D9D9D9] focus:border-[#959595] border-2 transition-colors px-3 py-2 focus:ring-0 font-normal text-[#848484];
+  }
+
+  .text-button {
+    @apply text-[#68BFBA] hover:text-white hover:bg-[#00CCBF] font-semibold px-8 py-2 transition-colors w-fit rounded-lg;
+  }
+
+  .normal-button {
+    @apply bg-[#00CCBF] border-b-[#3FA59E] border-b-4 hover:bg-[#21B5AB] text-white font-semibold px-8 py-2 transition-colors w-fit rounded-lg;
+  }
 }

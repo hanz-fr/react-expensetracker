@@ -3,7 +3,7 @@ import ExpenseTotal from "./ExpenseTotal";
 import ExpenseCount from "./ExpenseCount";
 import Container from "../UI/Container";
 
-function Expenses(props) {
+const Expenses = (props) => {
   /* Total amount of the expenses */
   const sum = props.items.reduce((accumulator, object) => {
     return accumulator + object.amount;

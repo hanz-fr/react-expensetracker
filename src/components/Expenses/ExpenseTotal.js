@@ -1,4 +1,4 @@
-function ExpenseTotal(props) {
+const ExpenseTotal = (props) => {
 
   return (
     <div className="flex basis-2/3 justify-between px-5 py-2 bg-[#373737] rounded-lg">

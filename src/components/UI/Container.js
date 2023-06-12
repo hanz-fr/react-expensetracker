@@ -1,4 +1,4 @@
-function Container (props) {
+const Container = (props) => {
     /* default classname/styling for container */
     const classes = 'p-5 rounded-xl border-[#B4B4B4] ' + props.className;
 
