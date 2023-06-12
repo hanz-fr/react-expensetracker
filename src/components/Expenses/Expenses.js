@@ -1,7 +1,7 @@
 import ExpenseItem from "./ExpenseItem";
 import ExpenseTotal from "./ExpenseTotal";
 import ExpenseCount from "./ExpenseCount";
-import Container from "./Container";
+import Container from "../UI/Container";
 
 function Expenses(props) {
   /* Total amount of the expenses */
