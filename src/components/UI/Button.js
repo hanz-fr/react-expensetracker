@@ -4,7 +4,7 @@ const Button = (props) => {
 
   /* check if textbutton or not */
   let classes;
-  if (props.isTextButton == true) {
+  if (props.isTextButton === true) {
     classes = 'text-button ' + props.className;
   } else {
     classes = 'normal-button ' + props.className;
@@ -12,11 +12,11 @@ const Button = (props) => {
 
   /* check button type */
   let btn_type;
-  if (props.type == 'submit') {
+  if (props.type === 'submit') {
     btn_type = 'submit'
-  } else if (props.type == 'button') {
+  } else if (props.type === 'button') {
     btn_type = 'button'
-  } else if (props.type == 'reset') {
+  } else if (props.type === 'reset') {
     btn_type = 'reset'
   } else {
     btn_type = 'button'

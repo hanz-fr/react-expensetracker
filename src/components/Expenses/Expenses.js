@@ -4,6 +4,7 @@ import ExpenseCount from "./ExpenseCount";
 import ExpenseFilter from "../Expenses/ExpenseFilter";
 import ExpenseChart from "./ExpenseChart";
 import Container from "../UI/Container";
+import Dropdown from "../UI/Dropdown";
 
 const Expenses = (props) => {
   /* Total amount of the expenses */
@@ -15,6 +16,7 @@ const Expenses = (props) => {
     <Container className="border-b-8 bg-[#E6E6E6] flex flex-col gap-3 rounded-xl">
       {/* Expense filter and chart */}
       <ExpenseFilter />
+      <Dropdown />
       <ExpenseChart />
       <Container className="bg-[#2D2D2D] rounded-xl">
         {/* Expenses Total and Count */}

@@ -3,7 +3,6 @@ import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import NewExpenseHeader from "./components/NewExpense/NewExpenseHeader";
-import ExpenseFilter from "./components/Expenses/ExpenseFilter";
 import Separator from "./components/UI/Separator";
 import Dropdown from "./components/UI/Dropdown";
 
