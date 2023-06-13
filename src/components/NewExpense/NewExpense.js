@@ -4,12 +4,23 @@ import Container from '../UI/Container';
 import ExpenseForm from './ExpenseForm';
 import Logo from '../UI/Logo';
 /* FYI, this is a form input if u forgot */
-const NewExpense = () => {
+const NewExpense = (props) => {
+
+  const submitExpenseDataHandler = (enteredExpenseData) => {
+    const expenseData = {
+      ...enteredExpenseData,
+      id: Math.random().toString()
+    };
+
+    /* Forward data to App.js through 'onAddExpense' function */
+    props.onAddExpense(expenseData);
+  }
+
   return (
     <div>
       <Container className="border-b-4 bg-[#E6E6E6]">
         <Logo />
-        <ExpenseForm />
+        <ExpenseForm onSubmitExpenseData={submitExpenseDataHandler} />
       </Container>
     </div>
   )

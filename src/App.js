@@ -11,10 +11,16 @@ function App() {
     { title: "Artifact", amount: 942.5, date: new Date(2021, 11, 1) },
   ];
 
+  /* A function simply to handle new expense retrieved from NewExpense component */
+  const addExpenseHandler = expense => {
+    console.log('Logged from App.js');
+    console.log(expense);
+  }
+
   return (
     <div className="flex justify-center">
       <div className="flex flex-col">
-        <NewExpense />
+        <NewExpense onAddExpense={addExpenseHandler} />
         <Expenses items={expenses} />
       </div>
     </div>
