@@ -5,9 +5,9 @@ const Button = (props) => {
   /* check if textbutton or not */
   let classes;
   if (props.isTextButton == true) {
-    classes = 'text-button'
+    classes = 'text-button ' + props.className;
   } else {
-    classes = 'normal-button'
+    classes = 'normal-button ' + props.className;
   }
 
   /* check button type */

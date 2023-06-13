@@ -17,8 +17,8 @@ const NewExpense = (props) => {
   }
 
   return (
-    <div className="drop-shadow-lg">
-      <Container className="border-b-4 bg-[#E6E6E6]">
+    <div className="drop-shadow-lg absolute w-full">
+      <Container className="border-b-4 bg-[#E6E6E6] rounded-xl">
         <Logo />
         <ExpenseForm onSubmitExpenseData={submitExpenseDataHandler} />
       </Container>

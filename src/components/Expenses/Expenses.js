@@ -1,6 +1,8 @@
 import ExpenseItem from "./ExpenseItem";
 import ExpenseTotal from "./ExpenseTotal";
 import ExpenseCount from "./ExpenseCount";
+import ExpenseFilter from "../Expenses/ExpenseFilter";
+import ExpenseChart from "./ExpenseChart";
 import Container from "../UI/Container";
 
 const Expenses = (props) => {
@@ -10,8 +12,11 @@ const Expenses = (props) => {
   }, 0);
 
   return (
-    <Container className="border-b-8 bg-[#E6E6E6]">
-      <Container className="bg-[#2D2D2D]">
+    <Container className="border-b-8 bg-[#E6E6E6] flex flex-col gap-3 rounded-xl">
+      {/* Expense filter and chart */}
+      <ExpenseFilter />
+      <ExpenseChart />
+      <Container className="bg-[#2D2D2D] rounded-xl">
         {/* Expenses Total and Count */}
         <div className="flex flex-row gap-5 justify-between">
           <ExpenseTotal total={sum} />

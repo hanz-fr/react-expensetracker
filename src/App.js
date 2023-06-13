@@ -2,7 +2,11 @@ import "./App.css";
 
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import NewExpenseHeader from "./components/NewExpense/NewExpenseHeader";
+import ExpenseFilter from "./components/Expenses/ExpenseFilter";
 import Separator from "./components/UI/Separator";
+import Dropdown from "./components/UI/Dropdown";
+
 
 function App() {
   const expenses = [
@@ -20,8 +24,9 @@ function App() {
 
   return (
     <div className="flex justify-center my-10">
-      <div className="flex flex-col">
-        <NewExpense onAddExpense={addExpenseHandler} />
+      <div className="flex flex-col relative">
+        {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
+        <NewExpenseHeader />
         <Separator />
         <Expenses items={expenses} />
       </div>
