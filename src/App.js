@@ -2,6 +2,7 @@ import "./App.css";
 
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import Separator from "./components/UI/Separator";
 
 function App() {
   const expenses = [
@@ -18,9 +19,10 @@ function App() {
   }
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center my-10">
       <div className="flex flex-col">
         <NewExpense onAddExpense={addExpenseHandler} />
+        <Separator />
         <Expenses items={expenses} />
       </div>
     </div>
