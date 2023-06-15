@@ -1,6 +1,15 @@
 import React from "react";
 
 const ChartBar = (props) => {
+
+  /* 
+  chart formula for determining the bar height
+
+  x = sum of all expenses, all month (100%)
+  y = sum of expenses each month
+  z = percentage each month : (1/x * y) * 100
+  */
+
   return (
     <div className="flex flex-col gap-3">
       <div class="chart-bar mx-auto">
