@@ -1,22 +1,29 @@
+import React, {useState} from 'react';
+
 import ExpenseItem from "./ExpenseItem";
 import ExpenseTotal from "./ExpenseTotal";
 import ExpenseCount from "./ExpenseCount";
 import ExpenseFilter from "../Expenses/ExpenseFilter";
 import ExpenseChart from "./ExpenseChart";
 import Container from "../UI/Container";
-import Dropdown from "../UI/Dropdown";
 
 const Expenses = (props) => {
+  /* Filter year state */
+  const [filteredYear, setFilteredYear] = useState('2019');
+
   /* Total amount of the expenses */
   const sum = props.items.reduce((accumulator, object) => {
     return accumulator + object.amount;
   }, 0);
 
+  const filterChangeHandler = selectedYear => {
+    setFilteredYear(selectedYear);
+  };
+
   return (
     <Container className="border-b-8 bg-[#E6E6E6] flex flex-col gap-3 rounded-xl">
       {/* Expense filter and chart */}
-      <ExpenseFilter />
-      <Dropdown />
+      <ExpenseFilter selectedFilterYear={filteredYear} onChangeFilter={filterChangeHandler} />
       <ExpenseChart />
       <Container className="bg-[#2D2D2D] rounded-xl">
         {/* Expenses Total and Count */}
