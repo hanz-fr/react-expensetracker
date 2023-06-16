@@ -23,7 +23,7 @@ function App() {
   }
 
   return (
-    <div className="flex justify-center my-10">
+    <div className="flex justify-center mt-5">
       <div className="flex flex-col relative">
         {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
         <NewExpenseHeader />

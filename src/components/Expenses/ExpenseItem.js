@@ -18,13 +18,13 @@ const ExpenseItem = (props) => {
   return (
     /* Card */
     <Card>
-      <div className="flex justify-between px-10 py-5">
+      <div className="flex justify-between px-6 py-5">
         {/* Date */}
         <div className="flex gap-14">
           <ExpenseDate date={props.date} />
           {/* Title */}
           <div className="my-auto">
-            <p className="w-48 text-white text-sm font-light">{title}</p>
+            <p className="w-48 text-white text-sm font-normal">{title}</p>
           </div>
         </div>
         <div className="mx-20"></div>
