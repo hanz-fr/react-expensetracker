@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 import ExpenseItem from "./ExpenseItem";
 import ExpenseTotal from "./ExpenseTotal";
@@ -9,6 +9,7 @@ import Container from "../UI/Container";
 
 const Expenses = (props) => {
   const currentYear = new Date().getFullYear();
+  const [filterInfoText, setFilterText] = useState('2020, 2021, & 2022');
 
   /* Filter year state */
   const [filteredYear, setFilteredYear] = useState(currentYear);
@@ -23,22 +24,20 @@ const Expenses = (props) => {
   };
 
   /* this code below is just me playing around with state */
-  const [percentage, setPercentage] = useState("0%");
+  /* Derived state / computed state */
+  let percentage = "0%"
 
-  useEffect(() => {
-    if (filteredYear === '2023') {
-      setPercentage("85%");
-    } else if (filteredYear === '2022') {
-      setPercentage("5%");
-    } else if (filteredYear === '2021') {
-      setPercentage("30%");
-    } else if (filteredYear === '2020') {
-      setPercentage("10%");
-    } else {
-      setPercentage("0%");
-    }
-  });
-
+  if (filteredYear === '2023') {
+    percentage = "85%";
+  } else if (filteredYear === '2022') {
+    percentage = "2%";
+  } else if (filteredYear === '2021') {
+    percentage = "45%";
+  } else if (filteredYear === '2020') {
+    percentage = "15%";
+  } else {
+    percentage = "0%";
+  }
 
   return (
     <Container className="border-b-8 bg-[#E6E6E6] flex flex-col gap-3 rounded-xl">
