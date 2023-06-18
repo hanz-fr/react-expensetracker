@@ -10,7 +10,6 @@ import Container from "../UI/Container";
 const Expenses = (props) => {
   
   const currentYear = new Date().getFullYear();
-  const [filterInfoText, setFilterText] = useState('2020, 2021, & 2022');
 
   /* Filter year state */
   const [filteredYear, setFilteredYear] = useState(currentYear);

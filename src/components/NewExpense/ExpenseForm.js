@@ -7,6 +7,7 @@ const ExpenseForm = (props) => {
   /* States */
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
+  const currentDate = new Date().toJSON().slice(0, 10);
 
   /* Datepicker handler */
   let [dateValue, setDateValue] = useState({
@@ -36,10 +37,20 @@ const ExpenseForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault(); // disable form submitting to development server
 
+    console.log(new Date(dateValue.startDate));
+
+    /* Date IF NULL handler */
+    let date;
+    if(dateValue.startDate == null) {
+      date = new Date(currentDate);
+    } else {
+      date = new Date(dateValue.startDate);
+    }
+
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: new Date(dateValue.startDate),
+      date: date,
     };
 
     /* Execute the function to pass expense data to NewExpense */
@@ -78,6 +89,7 @@ const ExpenseForm = (props) => {
             placeholder="Title"
             onChange={titleChangeHandler}
             value={enteredTitle}
+            required
           />
         </div>
 
@@ -90,6 +102,7 @@ const ExpenseForm = (props) => {
           placeholder="Amount"
           onChange={amountChangeHandler}
           value={enteredAmount}
+          required
         />
 
         {/* Date */}
@@ -102,7 +115,7 @@ const ExpenseForm = (props) => {
             value={dateValue}
             readOnly={true}
             displayFormat={"DD/MM/YYYY"}
-            onChange={handleValueChange}
+            onChange={handleValueChange} 
           />
         </div>
       </div>
