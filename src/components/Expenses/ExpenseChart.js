@@ -8,7 +8,7 @@ const ExpenseChart = (props) => {
   
   return (
     <div>
-      <Container className="bg-[#373737] border-[6px] border-[#2e2e2e] flex justify-around rounded-xl">
+      <Container className="bg-[#373737] border-[6px] border-[#2b2b2b] flex justify-around rounded-xl">
         <ChartBar month={"Jan"} />
         <ChartBar month={"Feb"} />
         <ChartBar month={"Mar"} />

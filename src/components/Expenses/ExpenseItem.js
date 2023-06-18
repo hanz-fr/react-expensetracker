@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
@@ -6,14 +6,6 @@ import Card from "../UI/Card";
 const ExpenseItem = (props) => {
   /* Product Props */
   const amount = props.amount;
-
-  const [title, setTitle] = useState(props.title);
-  // const [amount, setAmount] = useState(props.amount);
-
-  /* click event handler */
-  const clickHandler = () => {
-    setTitle('Untitled');
-  }
 
   return (
     /* Card */
@@ -24,7 +16,7 @@ const ExpenseItem = (props) => {
           <ExpenseDate date={props.date} />
           {/* Title */}
           <div className="my-auto">
-            <p className="w-48 text-white text-sm font-normal">{title}</p>
+            <p className="w-48 text-white text-sm font-normal">{props.title}</p>
           </div>
         </div>
         <div className="mx-20"></div>

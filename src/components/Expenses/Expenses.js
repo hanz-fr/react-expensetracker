@@ -8,6 +8,7 @@ import ExpenseChart from "./ExpenseChart";
 import Container from "../UI/Container";
 
 const Expenses = (props) => {
+  
   const currentYear = new Date().getFullYear();
   const [filterInfoText, setFilterText] = useState('2020, 2021, & 2022');
 
@@ -16,7 +17,7 @@ const Expenses = (props) => {
 
   /* Total amount of the expenses */
   const sum = props.items.reduce((accumulator, object) => {
-    return accumulator + object.amount;
+    return accumulator + parseInt(object.amount);
   }, 0);
 
   const filterChangeHandler = (selectedYear) => {
