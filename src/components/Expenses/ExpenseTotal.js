@@ -1,7 +1,5 @@
 const ExpenseTotal = (props) => {
 
-  console.log(typeof(props.total));
-
   return (
     <div className="flex basis-2/3 justify-between px-5 py-2 bg-[#373737] rounded-lg">
       <div className="text-base text-white">Total :</div>

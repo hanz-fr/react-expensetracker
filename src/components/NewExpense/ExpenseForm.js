@@ -5,9 +5,8 @@ import Button from "../UI/Button";
 
 const ExpenseForm = (props) => {
   /* States */
-  const [enteredTitle, setEnteredTitle] = useState('');
-  const [enteredDate, setEnteredDate] = useState('');
-  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
 
   /* Datepicker handler */
   let [dateValue, setDateValue] = useState({
@@ -20,7 +19,6 @@ const ExpenseForm = (props) => {
     setDateValue(newValue);
   };
 
-
   /* Listener & Handler */
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -28,7 +26,7 @@ const ExpenseForm = (props) => {
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
-  }
+  };
 
   // NOTE : the date handler is already handled by DatePicker plugin.
   /* const dateChangeHandler = (event) => {
@@ -38,27 +36,39 @@ const ExpenseForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault(); // disable form submitting to development server
 
-      const expenseData = {
-        title: enteredTitle,
-        amount: enteredAmount,
-        date: new Date(dateValue.startDate)
-      }
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(dateValue.startDate),
+    };
 
-      /* Execute the function to pass expense data to NewExpense */
-      props.onSubmitExpenseData(expenseData);
+    /* Execute the function to pass expense data to NewExpense */
+    props.onSubmitExpenseData(expenseData);
 
-      /* Clear the form input after submitting the form */
-      setEnteredTitle('');
-      setEnteredAmount('');
-      setDateValue({
-        startDate: null,
-        endDate: null,
-      });
+    /* Clear the form input after submitting the form */
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setDateValue({
+      startDate: null,
+      endDate: null,
+    });
   };
-  
+
+  const cancelButtonHandler = () => {
+    props.onFormCancel();
+  };
+
+  let formDisplay;
+  if (props.formDisplay === "show") {
+    formDisplay = "flex";
+  } else {
+    formDisplay = "hidden";
+  }
+
+  const formClasses = formDisplay + " flex-col gap-5 mt-2";
 
   return (
-    <form onSubmit={submitHandler} className="flex flex-col gap-5 mt-2">
+    <form onSubmit={submitHandler} className={formClasses}>
       <div className="grid grid-cols-2 gap-4">
         {/* Title */}
         <div>
@@ -97,8 +107,12 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="flex justify-end gap-3">
-        <Button isTextButton={true} text={"Cancel"} />
-        <Button type={'submit'} isTextButton={false} text={"Add"} />
+        <Button
+          isTextButton={true}
+          text={"Cancel"}
+          onButtonClick={cancelButtonHandler}
+        />
+        <Button type={"submit"} isTextButton={false} text={"Add"} />
       </div>
     </form>
   );

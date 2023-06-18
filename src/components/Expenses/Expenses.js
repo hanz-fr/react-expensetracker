@@ -17,7 +17,7 @@ const Expenses = (props) => {
 
   /* Total amount of the expenses */
   const sum = props.items.reduce((accumulator, object) => {
-    return accumulator + parseInt(object.amount);
+    return accumulator + parseFloat(object.amount);
   }, 0);
 
   const filterChangeHandler = (selectedYear) => {
