@@ -38,7 +38,7 @@ const Expenses = (props) => {
       <ExpenseChart />
       <Container className="bg-[#2D2D2D] rounded-xl">
         {/* Expenses Total and Count */}
-        <div className="flex flex-row gap-5 justify-between">
+        <div className="flex flex-row gap-2 md:gap-5 justify-between">
           <ExpenseTotal total={sum} />
           <ExpenseCount count={props.items.length} />
         </div>

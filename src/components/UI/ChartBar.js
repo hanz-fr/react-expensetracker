@@ -11,11 +11,11 @@ const ChartBar = (props) => {
   */
 
   return (
-    <div className="flex flex-col gap-3">
+  <div className="flex flex-col gap-3">
       <div className="chart-bar mx-auto">
-        <div className="bg-[#00CCBF] overflow-hidden transition-all duration-500 rounded-t-[4px]" role="progressbar" style={{ height: "0%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        <div className="bg-[#00CCBF] overflow-hidden transition-all duration-500 rounded-t-[4px]" role="progressbar" style={{ height: "20%" }} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
       </div>
-      <div className="text-white font-light text-sm">{props.month}</div>
+      <div className="text-white font-light text-[10px] md:text-sm">{props.month}</div>
     </div>
   );
 };
