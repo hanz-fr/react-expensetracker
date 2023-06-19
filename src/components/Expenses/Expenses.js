@@ -25,7 +25,7 @@ const Expenses = (props) => {
   };
 
   /* Filter expenses based on year filter */
-  let filteredExpenses = props.items.filter(expense => expense.date.getFullYear() === parseInt(filteredYear));
+  const filteredExpenses = props.items.filter(expense => expense.date.getFullYear() === parseInt(filteredYear));
 
   /* this code below is just me playing around with state */
   /* Derived state / computed state */
