@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ExpenseTotal from "./ExpenseTotal";
 import ExpensesList from "./ExpensesList";
 import ExpenseCount from "./ExpenseCount";
-import ExpenseFilter from "../Expenses/ExpenseFilter";
+import ExpenseFilter from "./ExpenseFilter";
 import ExpenseChart from "./ExpenseChart";
 import Container from "../UI/Container";
 

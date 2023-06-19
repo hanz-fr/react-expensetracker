@@ -7,7 +7,6 @@ import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import NewExpenseHeader from "./components/NewExpense/NewExpenseHeader";
 import Separator from "./components/UI/Separator";
-import Dropdown from "./components/UI/Dropdown";
 
 const DUMMY_EXPENSES = [];
 
