@@ -19,9 +19,13 @@ const Expenses = (props) => {
     return accumulator + parseFloat(object.amount);
   }, 0);
 
+  /* Filter year handler */
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
+
+  /* Filter expenses based on year filter */
+  let filteredExpenses = props.items.filter(expense => expense.date.getFullYear() === parseInt(filteredYear));
 
   /* this code below is just me playing around with state */
   /* Derived state / computed state */
@@ -56,8 +60,9 @@ const Expenses = (props) => {
         <div className="my-3"></div> {/* Small Spacer */}
         {/* Expenses, inside a Container */}
         <div className="h-96 overflow-y-scroll scrollbar-track-rounded-md scrollbar-thumb-rounded-md scrollbar-thin scrollbar-thumb-[#6C6C6C] scrollbar-track-[#3E3E3E]">
-          {props.items.map((expense) => (
+          {filteredExpenses.map((expense) => (
             <ExpenseItem
+              key={expense.id}
               title={expense.title}
               amount={expense.amount}
               date={expense.date}
