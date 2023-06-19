@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
-import ExpenseItem from "./ExpenseItem";
 import ExpenseTotal from "./ExpenseTotal";
+import ExpensesList from "./ExpensesList";
 import ExpenseCount from "./ExpenseCount";
 import ExpenseFilter from "../Expenses/ExpenseFilter";
 import ExpenseChart from "./ExpenseChart";
 import Container from "../UI/Container";
 
 const Expenses = (props) => {
-  
   const currentYear = new Date().getFullYear();
 
   /* Filter year state */
@@ -25,23 +24,9 @@ const Expenses = (props) => {
   };
 
   /* Filter expenses based on year filter */
-  const filteredExpenses = props.items.filter(expense => expense.date.getFullYear() === parseInt(filteredYear));
-
-  /* this code below is just me playing around with state */
-  /* Derived state / computed state */
-  let percentage = "0%"
-
-  if (filteredYear === '2023') {
-    percentage = "85%";
-  } else if (filteredYear === '2022') {
-    percentage = "2%";
-  } else if (filteredYear === '2021') {
-    percentage = "45%";
-  } else if (filteredYear === '2020') {
-    percentage = "15%";
-  } else {
-    percentage = "0%";
-  }
+  const filteredExpenses = props.items.filter(
+    (expense) => expense.date.getFullYear() === parseInt(filteredYear)
+  );
 
   return (
     <Container className="border-b-8 bg-[#E6E6E6] flex flex-col gap-3 rounded-xl">
@@ -60,14 +45,7 @@ const Expenses = (props) => {
         <div className="my-3"></div> {/* Small Spacer */}
         {/* Expenses, inside a Container */}
         <div className="h-96 overflow-y-scroll scrollbar-track-rounded-md scrollbar-thumb-rounded-md scrollbar-thin scrollbar-thumb-[#6C6C6C] scrollbar-track-[#3E3E3E]">
-          {filteredExpenses.map((expense) => (
-            <ExpenseItem
-              key={expense.id}
-              title={expense.title}
-              amount={expense.amount}
-              date={expense.date}
-            />
-          ))}
+          <ExpensesList items={filteredExpenses}/>
         </div>
       </Container>
     </Container>
