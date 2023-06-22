@@ -16,7 +16,7 @@ const ExpenseItem = (props) => {
           <ExpenseDate date={props.date} />
           {/* Title */}
           <div className="my-auto">
-            <p className="w-20 truncate md:text-clip md:w-48 text-white text-xs md:text-sm font-normal">{props.title}</p>
+            <p className="w-20 truncate md:w-56 text-white text-xs md:text-sm font-normal">{props.title}</p>
           </div>
         </div>
         {/* Price */}
