@@ -85,7 +85,7 @@ code {
   }
 
   .dropdown-link {
-    @apply flex items-center gap-x-3.5 py-2 px-3 transition-all rounded-md text-sm text-white hover:bg-[#2b2b2b] focus:ring-2 focus:ring-[#00CCBF] dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300;
+    @apply font-equinox flex items-center gap-x-3.5 py-2 px-3 transition-all rounded-md text-xs md:text-base text-white hover:bg-[#2b2b2b] focus:ring-2 focus:ring-[#00CCBF] dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300;
   }
 
   .prevent-select {

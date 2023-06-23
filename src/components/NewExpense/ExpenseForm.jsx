@@ -106,16 +106,16 @@ const ExpenseForm = (props) => {
         />
 
         {/* Date */}
-        <div className="">
+        <div>
           <Datepicker
-            inputClassName={"date-input"}
+            inputClassName={"date-input text-sm md:text-lg"}
             primaryColor={"teal"}
             useRange={false}
             asSingle={true}
             value={dateValue}
             readOnly={true}
             displayFormat={"DD/MM/YYYY"}
-            onChange={handleValueChange} 
+            onChange={handleValueChange}
           />
         </div>
       </div>
