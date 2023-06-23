@@ -4,7 +4,7 @@ import ExpenseTotal from "./ExpenseTotal";
 import ExpensesList from "./ExpensesList";
 import ExpenseCount from "./ExpenseCount";
 import ExpenseFilter from "./ExpenseFilter";
-import ExpenseChart from "./ExpenseChart";
+import ExpenseChart from "../UI/Chart";
 import Container from "../UI/Container";
 
 const Expenses = (props) => {

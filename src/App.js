@@ -8,6 +8,7 @@ import NewExpense from "./components/NewExpense/NewExpense";
 import NewExpenseHeader from "./components/NewExpense/NewExpenseHeader";
 import Separator from "./components/UI/Separator";
 
+/* Initialize expenses with 0 items */
 const DUMMY_EXPENSES = [];
 
 const App = () => {
