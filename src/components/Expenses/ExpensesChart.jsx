@@ -1,7 +1,7 @@
 import React from "react";
 
-import Container from "./Container";
-import ChartBar from "./ChartBar";
+import Container from "../UI/Container";
+import ChartBar from "../UI/ChartBar";
 
 const ExpenseChart = (props) => {
   return (
