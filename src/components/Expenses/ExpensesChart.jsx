@@ -1,41 +1,31 @@
-import React from "react";
+import React from 'react'
 
-import Container from "../UI/Container";
-import ChartBar from "../UI/ChartBar";
+import Chart from "../UI/Chart";
 
-const ExpenseChart = (props) => {
-  return (
-    <div>
-      <Container className="bg-[#373737] border-[6px] border-zinc-800 flex justify-between sm:justify-evenly md:gap-0 rounded-xl py-5 px-[10px]">
-        
-        {/* Improved version of ChartBar.
-        ChartBar is displayed dynamically, by using an array and then mapping it.
-        It has an id using label (month) as its value, which is unique.
-        Value holds a total of expenses each month */}
-        
-        {/* {props.dataPoints.map((dataPoint) => (
-          <ChartBar
-            key={dataPoint.label}
-            value={dataPoint.value}
-            maxValue={null}
-            label={dataPoint.label}
-          />
-        ))} */}
-        <ChartBar month={"Jan"} />
-        <ChartBar month={"Feb"} />
-        <ChartBar month={"Mar"} />
-        <ChartBar month={"Apr"} />
-        <ChartBar month={"May"} />
-        <ChartBar month={"Jun"} />
-        <ChartBar month={"Jul"} />
-        <ChartBar month={"Aug"} />
-        <ChartBar month={"Sep"} />
-        <ChartBar month={"Oct"} />
-        <ChartBar month={"Nov"} />
-        <ChartBar month={"Des"} />
-      </Container>
-    </div>
-  );
-};
+const ExpensesChart = props => {
+    const chartDataPoints = [
+        {label: "Jan", value: 0},
+        {label: "Feb", value: 0},
+        {label: "Mar", value: 0},
+        {label: "Apr", value: 0},
+        {label: "May", value: 0},
+        {label: "Jun", value: 0},
+        {label: "Jul", value: 0},
+        {label: "Aug", value: 0},
+        {label: "Sep", value: 0},
+        {label: "Oct", value: 0},
+        {label: "Nov", value: 0},
+        {label: "Dec", value: 0},
+    ];
 
-export default ExpenseChart;
+    /* loop expenses, assign value of expense amount each month */
+    /* assignment start at index 0, which is January */
+    for (const expense of props.expenses) {
+        const expenseMonth = expense.date.getMonth();
+        chartDataPoints[expenseMonth].value += expense.amount;
+    }
+
+  return <Chart dataPoints={chartDataPoints}/>
+}
+
+export default ExpensesChart;

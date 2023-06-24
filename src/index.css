@@ -81,7 +81,7 @@ code {
   }
 
   .chart-bar {
-    @apply flex flex-col flex-nowrap justify-end w-[8px] md:w-[14px] h-20 md:h-32 bg-gray-200 rounded-[3px] md:rounded-[4px] overflow-hidden dark:bg-gray-700;
+    @apply flex flex-col flex-nowrap justify-end w-[8px] md:w-[14px] h-16 md:h-32 bg-gray-200 rounded-[3px] md:rounded-[4px] overflow-hidden dark:bg-gray-700;
   }
 
   .dropdown-link {

@@ -35,7 +35,7 @@ const Expenses = (props) => {
         selectedFilterYear={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      <ExpenseChart />
+      <ExpenseChart expenses={filteredExpenses} />
       <Container className="bg-[#2D2D2D] rounded-xl">
         {/* Expenses Total and Count */}
         <div className="flex flex-row gap-2 md:gap-5 justify-between">

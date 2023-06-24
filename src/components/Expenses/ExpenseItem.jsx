@@ -20,7 +20,7 @@ const ExpenseItem = (props) => {
           </div>
         </div>
         {/* Price */}
-        <div className="my-auto font-normal text-xs md:text-base text-ellipsis overflow-hidden text-white bg-[#00CCBF] text-center px-2 md:px-5 py-2 w-16 md:w-24 rounded-sm">
+        <div className="my-auto font-normal text-xs md:text-base text-ellipsis overflow-hidden md:text-clip text-white bg-[#00CCBF] text-center px-2 md:px-5 py-2 w-16 md:w-24 rounded-sm">
           ${amount}
         </div>
       </div>
